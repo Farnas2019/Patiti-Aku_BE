@@ -35,6 +35,10 @@ Start mongodb service and connect to the mongo shell
 
  - npm or yarn run dev
 
+## Documentation And How it works
+
+https://documenter.getpostman.com/view/9038236/UVz1MBVv
+
 ## Concepts
 
 - REST API principals
