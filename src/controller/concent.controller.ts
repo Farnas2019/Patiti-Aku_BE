@@ -16,25 +16,20 @@ import logger from "../utils/logger";
 // Controller That creates new Concent
 export async function createConcentHandler(req: Request, res: Response) {
   try {
+    const userId = req.params.userId;
     const body = req.body;
-    const user = await UserModel.findOne({ id: body.userId });
+    const user = await UserModel.findOne({ id: userId });
     if (!user) {
       return res.status(404).json({
         status: "failed",
         Message: "User Does not exist",
       });
     }
-
-    const existingConcent = await ConcentModel.findOne({ user: body.userId });
-    if (body.Id == existingConcent?.Id && existingConcent?.enabled == true) {
-      return res.json({ message: "Content is already enabled" });
-    } 
-    await existingConcent?.enabled != existingConcent?.enabled;
-    await existingConcent?.save();
     const Concent = await createConcent({
       ...body,
-      enabled: true,
+      enabled: true
     });
+  
     //@ts-ignore
     user.concent.push(Concent);
     user.save();

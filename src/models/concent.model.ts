@@ -10,14 +10,11 @@ export interface ConcentDocument extends mongoose.Document {
   updatedAt: Date;
 }
 
-enum Id {
-  "email_notifications",
-  "sms_notifications",
-}
+
 const concentSchema = new mongoose.Schema(
   {
       Id:{
-        enum:Id,
+        enum:["email_notifications", "sms_notifications",],
         type: String,
         required: true,
       },

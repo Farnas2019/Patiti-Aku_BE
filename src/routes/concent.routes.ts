@@ -13,7 +13,7 @@ import {
 const router = express.Router();
 
 router.post(
-  "/",
+  "/:userId",
  validateResource(createConcentSchema),
  createConcentHandler
 
