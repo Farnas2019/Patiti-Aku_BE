@@ -49,3 +49,5 @@ process.on("unhandledRejection", (err: { message: string }, promise) => {
   //close server & exit process
   server.close(() => process.exit(1));
 });
+
+module.exports = server
